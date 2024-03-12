@@ -62,23 +62,22 @@ jmp n_c2
 
 r:
 movl %ecx, %eax
-xor %edx,%edx   # initialiser %edx a 0 avant la div (modif1)
+xorl %edx, %edx   # initialiser %edx a 0 avant la div (modif1)
 divl %ebx
-cmp $0x00, %eax
+cmp $0x01, %eax   # comparer le quotient a 1
+jg e_d           # imprimer le dénominateur si 1 est plus grand que le quotient 
 jmp e_n
-je e_d              
-             
 
 e_n:
 push $num
 call printf
-add $4, %esp    # on clean apres le printf (modif2)
+add $4, %esp    # on clean apres le printf (modif3)
 jmp bye
 
 e_d:
 push $den
 call printf
-add $4, %esp    # on clean apres le printf (modif2)
+add $4, %esp    # on clean apres le printf (modif4)
 
 bye:
 popl %ebx

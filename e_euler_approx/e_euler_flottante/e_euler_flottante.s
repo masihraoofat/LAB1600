@@ -24,22 +24,22 @@ push %ebx
 
 ## VOTRE CODE ICI 
 
-fld1                        # load 1.0 sur la pile
-fstp factorial_value        # Save 1.0 et pop de la pile
+flds $1                        # load 1.0 sur la pile
+fstps factorial_value        # Save 1.0 et pop de la pile
 
 movl iteration_FPU, %ecx    # ini iteration
-fld iteration_FPU           # load sur la pile
+flds iteration_FPU           # load sur la pile
 
 approximation_e:
-    fmul    factorial_value # calcul : facteur * (itera - 1)
-    fdiv    factorial        # div par facteur
-    fadd    e                # add à la valeur e
-    fstp    e                # save et pop de la pile
+    fmulpd    factorial_value  # calcul : facteur * (itera - 1)
+    fdivpd    factorial        # div par facteur
+    faddpd    e                # add à la valeur e
+    fstpsd    e                # save et pop de la pile
 
-    fadd    one              
-    fild    iteration_FPU    # load prochaine itera
-    fmul                    # itera * dernier facteur
-    fstp    factorial_value # save et pop de la pile
+    faddpd    one              
+    flds    iteration_FPU    # load prochaine itera
+    fmulp                    # itera * dernier facteur
+    fstps    factorial_value # save et pop de la pile
 
     cmp     iteration, %ecx # verif nb itera
     jl      approximation_e

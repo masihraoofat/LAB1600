@@ -10,33 +10,30 @@ push %ebx
 
 ##VOTRE CODE ICI
 
+    movl $1, %ebx      # denominator
+    movl 8(%ebp), %edx # input
 
-push %ecx
+    movl $1, %eax      # resultat
+    movl $1, %ecx      # counter 
 
-    movl $1, %eax   # on initialise tout a 1
-    movl $1, %ebx   
-    movl $1, %ecx  
-    movl $1, %edx   
-
-    movl 8(%ebp), %ecx 
-
-    cmp $0, %ecx    
-    je fin_iteration
+    cmp $0, %edx       # verif cas ou n=0
+    je fin_iteration   # 
 
 boucle_iteration:
-    mul %ebx   
-    incl %ebx  
-    mov %ebx, %eax  
-    div %ecx   
-    mov %edx, %eax  
-    add $1, %ecx  
-    mov %eax, %ebx  
-    cmp %ecx, %edi  
-    jle boucle_iteration  
+    cmpl %edx, %ebx    # verif counter
+    jge fin_iteration
 
+    imull %ebx, %ecx   # calcul de n!
+    movl %ecx, %ebx    
 
-fin_iteration:
-    pop %ecx   
+    idivl %ebx         # 1/n!
+    addl %eax, %ecx    # on ajoute a "e"
+    
+    addl $1, %ebx      # counter +1
+
+    jmp boucle_iteration
+
+fin_iteration: 
     pop %ebx
     pop %ebp
     ret
