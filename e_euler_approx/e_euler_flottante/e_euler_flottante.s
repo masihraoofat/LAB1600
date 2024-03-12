@@ -31,10 +31,10 @@ movl iteration_FPU, %ecx    # ini iteration
 flds iteration_FPU           # load sur la pile
 
 approximation_e:
-    fmulp factorial_value  # calcul : facteur * (itera - 1)
-    fdivp factorial        # div par facteur
-    faddp e                # add à la valeur e
-    fstps e                # save et pop de la pile
+    fmulp   factorial_value  # calcul : facteur * (itera - 1)
+    fdivp   factorial        # div par facteur
+    faddp   e                # add à la valeur e
+    fstps   e                # save et pop de la pile
 
     faddp    one              
     flds    iteration_FPU    # load prochaine itera

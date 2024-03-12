@@ -59,24 +59,3 @@ anagramme:
     same_sum:
     mov     $0, %eax
     ret
-
-
-# Pour gerer les majuscules, il faut formater toutes les lettres afin qu'elles soient toutes en minuscule, donc dans la loop pour additionner les lettres, on aurait:
-#
-# DANS UNE LOOP ...
-#        cmp $'A', %al   
-#        jl lowercase1  
-#        add $32, %al   
-#        mov %al, (%esi, string1)  
-#
-#    lowercase1:
-#        add %al, %bl   
-#        inc %esi  
-#        jmp loop_string1 
-#        
-#    check_lower:
-#        cmp $'a', %al   
-#        jl lowercase1  
-#        add %al, %bl   
-#        inc %esi  
-#        jmp loop_string1  

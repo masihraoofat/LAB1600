@@ -37,7 +37,3 @@ fin_iteration:
     pop %ebx
     pop %ebp
     ret
-
-
-# Q3.2.2 : on remarque que le nombre reste constant a 2. En effet, puisque l'approximation est entiere, la division 1/"gros nb" sera toujours egale a zero.
-#               Donc, les iterations passees un certain point sont inutiles, car on ajoute toujours zero.
