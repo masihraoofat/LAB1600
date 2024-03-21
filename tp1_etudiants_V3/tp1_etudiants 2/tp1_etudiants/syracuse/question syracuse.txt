@@ -1,0 +1,3 @@
+Q1/0,75 point Réaliser la question sur code machine. Veuillez remettre la question en format .asm ou .txt
+    
+Q2/0,50 point Réaliser la question en C. Lisez bien les paramètres du code source donnée !

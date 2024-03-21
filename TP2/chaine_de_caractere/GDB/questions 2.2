@@ -1,0 +1,14 @@
+Q2.2.1 Identifier ce que font chacune des étiquettes suivantes dans le programme.
+   
+    n_c : Permet de parcourir la chaine et de calculer la somme des valeurs ASCII
+    d : Permet de vérifier si une lettre est une majuscule ou une minuscule
+    r : Défini le reste de la division et vérifie si ce reste est égal à zéro
+    e_n : Défini le numérateur de la division. Il est utilisé si le reste n'est pas égal à zéro
+
+Q2.2.2 Identifier les 4 erreurs qui font que le programme ne fonctionne pas ou il ne donne pas le résultat voulu.
+
+    1- xorl %edx, %edx   # initialiser %edx a 0 avant la div
+    2- cmp $0x01, %eax   # comparer le quotient a 1
+       jg e_d           # imprimer le dénominateur si 1 est plus grand que le quotient 
+    3- add $4, %esp    # on clean apres le printf (ligne 74)
+    4- add $4, %esp    # on clean apres le printf (ligne 80)

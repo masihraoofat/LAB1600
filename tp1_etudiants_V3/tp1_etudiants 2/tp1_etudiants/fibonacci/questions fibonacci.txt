@@ -1,0 +1,12 @@
+Q1/0,25 point Réaliser la question sur code machine. Veuillez remettre la question en format .asm ou .txt
+
+Q2/0,25 point Identifier votre plage de possibilités et les raisons qui amènent cette étendue.
+    Notre code est seulement capable de calculer jusqu'au 22ième terme de la suite de fibonacci
+    puisque la simulation est seulement capable d'effectuer 511 opérations, et ca en prend 492
+    pour calculer le 22ième terme. Si nous demandons 23 terms (en donnant une valeur 23 au 
+    variable "n_value"), la simulation a besoin de 512 opérations mais il s'arrête à 511 opérations et ne fini pas ses calcules.
+    J'ai cherché longtemps pour trouver comment rendre l'algorithm plus efficace de UNE SEULE LIGNE mais
+    malheureusement je n'y suis pas arrivé.
+
+Q3/0,25 point Veuillez écrire la question en C. La question ne doit pas être écrite sous forme récursive.
+Référez-vous au fichier source donné.

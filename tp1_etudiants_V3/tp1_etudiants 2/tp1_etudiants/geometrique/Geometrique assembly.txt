@@ -1,0 +1,28 @@
+.text
+ld n
+sub one
+brz multiplication
+st n
+ld r
+st temp_r
+loop_power_r:
+ld n
+sub one
+brz multiplication
+st n
+ld temp_r
+mul r
+st temp_r
+br loop_power_r
+multiplication:
+ld a1
+mul temp_r
+st answer
+stop
+.data
+a1: 5 // METTRE LE PREMIER TERME
+r: 2 // METTRE LA RAISON DE LA SUITE
+n: 21 // METTRE LA POSITION DU NB VOULU (N > 0)
+temp_r: 0
+answer: 0
+one:1

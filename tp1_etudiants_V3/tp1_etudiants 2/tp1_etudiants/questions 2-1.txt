@@ -1,0 +1,16 @@
+Q1/0,25 point Quelles sont les structures de contrôle utilisées au sein de ce programme ?
+
+	Nous avons utilisé un "if" dans le forme de BRZ pour verifier si un des deux valeurs temporaires est égale à 	1 (en demandant si elle égalerait 0 si on soustrait de 1)
+
+	Nous avons aussi utilisé un boucle while pour continuer à décrementer les deux valeurs jusqu'à ce que une 	d'entre-elles arrive à 1.
+
+
+Q2/0,25 point Quel est le contenu en mémoire à l’adresse 0x0017 (qui diffère selon votre valeur de data) à la fin de l’exécution de ce programme ?
+
+	l'adresse 0x0017 contient la valeur du variable "awnser", qui est égal à 10
+
+Q3/0,25 point Que fait ce programme ? Répondez à la question en décrivant le principe de
+fonctionnement du programme en évitant de référer à son contenu ligne par ligne.
+	
+	le programme prend deux entiers et les copie dans des variables temporaires. Ensuite il décremente
+	chacun des variables temporaires de 1, jusqu'à ce qu'un des deux arrive à 0. l'entier dont le copie est 	arrivé à 0 en premier est placé dans answer. En résumé, le programme prend deux entiers et place le plus 	petit dans le variable answer

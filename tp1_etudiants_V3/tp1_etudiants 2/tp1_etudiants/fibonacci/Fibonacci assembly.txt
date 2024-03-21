@@ -1,0 +1,33 @@
+.text
+ld n_value
+brz end2
+loop1:
+ld n_value
+sub one
+brz end1
+st n_value
+ld value1
+add value2
+st value1
+ld n_value
+sub one
+brz end2
+st n_value
+ld value2
+add value1
+st value2
+br loop1
+end1:
+ld value2
+st answer
+stop
+end2:
+ld value1
+st answer
+stop
+.data
+value1: 0 
+value2: 1
+n_value: 10 // METTRE LA POSITION DU NB VOULU (f(0) = 0)
+answer: 0
+one:1

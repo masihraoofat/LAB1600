@@ -1,0 +1,40 @@
+.text
+start:
+ld numberOfTerms
+brz end
+ld u0
+st temp_var1
+shr one
+mul two
+sub u0
+brz even
+brnz odd
+even:
+ld u0
+shr one
+st u0
+ld numberOfTerms
+sub one
+st numberOfTerms
+br start
+odd:
+ld u0
+mul trois
+add one
+st u0
+ld numberOfTerms
+sub one
+st numberOfTerms
+br start
+end:
+ld u0
+st answer
+stop
+.data
+u0: 15
+numberOfTerms: 3
+answer: 0
+temp_var1: 0
+one: 1
+two: 2
+trois: 3

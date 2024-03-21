@@ -1,0 +1,22 @@
+Q1/0,75 point : Concevez un programme, en utilisant l'ensemble d'instructions fourni, destiné à
+implémenter la formule de calcul du Nième terme d'une suite géométrique, en partant d'un terme initial a0
+et d'une raison r. Votre programme devra être optimisé pour réduire au minimum le nombre total
+d'instructions employées. Définissez et nommez ces 3 variables dans votre code.
+
+Q2/0,25 point: Expliquez comment chaque terme de la suite est calculé et stocké dans votre programme,
+discutez ensuite des limitations de votre approche en termes de ressources et d'efficacité. Comment votre
+programme pourrait-il être amélioré si la contrainte de 511 instructions était levée ?
+
+    Nous commencons par vérifier si la valeur n est égale à 1, et si oui nous stockons a1 dans answer 
+    puisque c'est le 1ier terme de la suite géométrique. Si n>1, alors nous stockons notre constant r
+    dans le variable temp_r pour pouvoir ensuite le manipuler sans affecter le constant r. Ensuite, nous 
+    entrons dans la branche loop_power_r où au début de chaque itération nous verifions si n - 1 = 0, puisque ca indiquerait 
+    que nous sommes rendu au dernier itération du loop_power_r et il est temps de passer au multiplication. Si n>2,
+    nous passons à travers la boucle où on multiplie la variable temp_r par le constant r, et on store le resultat dans temp_r.
+    On repète le procès n fois en décrémentant n de 1 à chaque itération et sortant du boucle lorsque n=0 (avec brz).
+    Lorsque temp_r à été mutiliplié par r n fois, il est égale à r**n et on le stock dans temp_r avant de rentrer dans la branche 
+    de multiplication. Dans cette branche, on prend a1, on le multiplie par la valeur finale de temp_r (r**n) et on stock le resultat
+    dans la variable answer. Notre algorithm peut calculer jusqu'à 21 termes d'une suite géométrique en moins de 511 opérations, 
+    mais si cette contrainte était levé nous pourrions calculer n'importe quelle terme.
+
+Q3/0,25 point: Traduisez votre algorithme dans le langage de programmation C.

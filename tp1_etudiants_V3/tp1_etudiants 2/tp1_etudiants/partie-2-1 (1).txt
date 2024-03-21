@@ -1,0 +1,30 @@
+.text
+ld value1
+st temp_value1
+ld value2
+st temp_value2
+loop1:
+ld temp_value1
+sub one
+brz end1
+st temp_value1
+ld temp_value2
+sub one
+brz end2
+st temp_value2
+br loop1
+end1:
+ld value1
+st awnser
+stop
+end2: 
+ld value2
+st awnser
+stop
+.data
+value1: 10 // valeur de valeur1 : ICI
+value2: 13 // valeur de valeur2 : ICI
+temp_value1:0
+temp_value2:0
+awnser: 10 // Indiqué la valeur de awnser : ICI
+one:1
